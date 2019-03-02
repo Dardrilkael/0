@@ -1,0 +1,6 @@
+[submodule "Hammer/vendor"]
+	path = Hammer/vendor
+	url = https://github.com/gabime/spdlog
+[submodule "Hammer/vendor/spdlog"]
+	path = Hammer/src/vendor/spdlog
+	url = https://github.com/gabime/spdlog

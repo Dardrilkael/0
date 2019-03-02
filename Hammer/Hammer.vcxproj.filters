@@ -16,10 +16,12 @@
     <ClInclude Include="src\Hammer\EntryPoint.h">
       <Filter>Hammer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hammer\Log.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hammer\Application.cpp">
       <Filter>Hammer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Hammer\Log.cpp" />
   </ItemGroup>
 </Project>

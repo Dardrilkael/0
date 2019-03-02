@@ -16,7 +16,8 @@ objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
 includedirs 
 {
-"%{prj.name}/src"
+"%{prj.name}/src",
+"%{prj.name}/vendor/spdlog/include"
 }
 
 files
@@ -35,19 +36,20 @@ filter "system:windows"
 		cppdialect "C++17"
 		systemversion "latest"
 		defines
-		{
-			"HM_PLATFORM_WINDOWS",
-			"HM_BUILD_DLL"
-		}
+	{
+		"HM_PLATFORM_WINDOWS",
+		"HM_BUILD_DLL"
+	}
 
 
 filter "configurations:Dist"
 optimize "On"
 symbols "Off"
-defines
-{
-	"HM_DIST"
-}
+
+	defines
+	{
+		"HM_DIST"
+	}
 
 filter "configurations:Release"
 optimize "On"
@@ -81,6 +83,7 @@ files
 includedirs
 {
 	"%{prj.name}/src",
+	"Hammer/vendor/spdlog/include",
 	"Hammer/src"
 }
 

@@ -151,10 +151,14 @@
     <ClInclude Include="src\Hammer\Application.h" />
     <ClInclude Include="src\Hammer\Core.h" />
     <ClInclude Include="src\Hammer\EntryPoint.h" />
+    <ClInclude Include="src\Hammer\Events\Event.h" />
+    <ClInclude Include="src\Hammer\Events\KeyEvent.h" />
+    <ClInclude Include="src\Hammer\Events\MouseEvent.h" />
     <ClInclude Include="src\Hammer\Log.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hammer\Application.cpp" />
+    <ClCompile Include="src\Hammer\Events\ApplicationEvent.h" />
     <ClCompile Include="src\Hammer\Log.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

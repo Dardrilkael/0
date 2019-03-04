@@ -16,12 +16,20 @@
     <ClInclude Include="src\Hammer\EntryPoint.h">
       <Filter>Hammer</Filter>
     </ClInclude>
-    <ClInclude Include="src\Hammer\Log.h" />
+    <ClInclude Include="src\Hammer\Log.h">
+      <Filter>Hammer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hammer\Events\Event.h" />
+    <ClInclude Include="src\Hammer\Events\MouseEvent.h" />
+    <ClInclude Include="src\Hammer\Events\KeyEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hammer\Application.cpp">
       <Filter>Hammer</Filter>
     </ClCompile>
-    <ClCompile Include="src\Hammer\Log.cpp" />
+    <ClCompile Include="src\Hammer\Log.cpp">
+      <Filter>Hammer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hammer\Events\ApplicationEvent.h" />
   </ItemGroup>
 </Project>

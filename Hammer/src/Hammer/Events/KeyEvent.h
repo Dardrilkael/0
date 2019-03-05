@@ -1,3 +1,4 @@
+#pragma once
 #include "Event.h"
 
 namespace Hammer{
@@ -22,7 +23,7 @@ public:
 	std::string ToString() const override
 	{
 		std::stringstream out;
-		out << "KeyPressed: " << (char)m_KeyCode<<"("<<m_KeyCode<<")";
+		out << "KeyPressed:  " << (char)m_KeyCode<<"("<<m_KeyCode<<")";
 		return out.str();
 	}
 

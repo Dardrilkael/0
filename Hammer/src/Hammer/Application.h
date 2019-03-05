@@ -1,5 +1,8 @@
 #pragma once
+
 #include "Core.h"
+#include "Window.h"
+#include "Events/ApplicationEvent.h"
 
 namespace Hammer 
 {
@@ -10,7 +13,11 @@ namespace Hammer
 	public:
 		Application();
 		~Application();
+		void OnEvent(Event& e);
 		void Run();
+		bool OnWindowClose(WindowCloseEvent& e);
+	private:
+		std::unique_ptr<Window> m_Window;
 	};
 	Application* CreateApplication();
 }

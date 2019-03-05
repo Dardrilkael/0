@@ -1,8 +1,7 @@
 #pragma once
+#include "hmpch.h"
 #include "Hammer/Core.h"
-#include <string>
-#include <sstream>
-#include <functional>
+
 
 enum class EventType
 {
@@ -34,6 +33,7 @@ enum EventCategory
 class HM_API Event
 {
 public:
+	bool Handled;
 	virtual EventType GetEventType() const = 0;
 	virtual const char* GetName() const = 0;
 	virtual int GetCategoryFlags() const = 0;

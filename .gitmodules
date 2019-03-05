@@ -1,6 +1,12 @@
-[submodule "Hammer/vendor"]
-	path = Hammer/vendor
-	url = https://github.com/gabime/spdlog
 [submodule "Hammer/vendor/spdlog"]
-	path = Hammer/src/vendor/spdlog
+	path = Hammer/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Hammer/vendor/GLFW"]
+	path = Hammer/vendor/GLFW
+	url = https://github.com/TheCherno/glfw
+[submodule "Hammer/vendor/imgui"]
+	path = Hammer/vendor/imgui
+	url = https://github.com/TheCherno/imgui
+[submodule "Hammer/vendor/glm"]
+	path = Hammer/vendor/glm
+	url = https://github.com/g-truc/glm

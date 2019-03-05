@@ -1,3 +1,4 @@
+#pragma once
 #include "Event.h"
 
 namespace Hammer{
@@ -21,7 +22,7 @@ public:
 	std::string ToString() const override
 	{
 		std::stringstream out;
-		out << GetName()<<": "<<m_Button;
+		out << GetName() << " : " << m_Button;
 		return out.str();
 	}
 	EVENT_CLASS_TYPE(MouseButtonPressed)

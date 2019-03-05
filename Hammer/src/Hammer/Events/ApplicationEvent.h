@@ -1,3 +1,4 @@
+#pragma once
 #include "Event.h"
 
 namespace Hammer
@@ -14,6 +15,13 @@ namespace Hammer
 
 		EVENT_CLASS_TYPE(WindowResized)
 			EVENT_CLASS_CATEGORY(EventCategoryApplication)
+
+		virtual std::string ToString() const override
+		{
+			std::stringstream out;
+			out << GetName() << ":(" << m_Width <<", "<< m_Height << ")";
+			return out.str();
+		}
 
 	private:
 		unsigned int m_Width, m_Height;
@@ -51,11 +59,25 @@ namespace Hammer
 	class HM_API WindowMovedEvent : public Event
 	{
 	public:
-		WindowMovedEvent() {}
+		WindowMovedEvent(int xPos,int yPos):m_xPos(xPos),m_yPos(yPos) {}
+
+		inline int GetXPos(){return m_xPos;}
+		inline int GetYPos(){return m_yPos;}
 
 
+		virtual std::string ToString() const override
+		{
+			std::stringstream out;
+			out << GetName() << ": (" << m_xPos << ", " << m_yPos << ")";
+			return out.str();
+
+		}
 		EVENT_CLASS_TYPE(WindowMoved)
-			EVENT_CLASS_CATEGORY(EventCategoryApplication)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
+
+
+	private:
+		int m_xPos, m_yPos;
 	};
 
 	class HM_API AppUpdateEvent : public Event

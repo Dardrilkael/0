@@ -4,6 +4,15 @@
     <Filter Include="Hammer">
       <UniqueIdentifier>{5F5DEBB6-4BFF-158D-34BA-29E120FB9CDD}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Hammer\Events">
+      <UniqueIdentifier>{6368C4C2-CF28-40F9-9863-897604E384D5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hammer\Platform">
+      <UniqueIdentifier>{93149EA1-FF9F-0B66-08B1-8E5A74BB6766}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hammer\Platform\Windows">
+      <UniqueIdentifier>{CDA1F481-39D9-3C19-42E3-A03CAE996312}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Hammer.h" />
@@ -16,12 +25,28 @@
     <ClInclude Include="src\Hammer\EntryPoint.h">
       <Filter>Hammer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hammer\Events\ApplicationEvent.h">
+      <Filter>Hammer\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hammer\Events\Event.h">
+      <Filter>Hammer\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hammer\Events\KeyEvent.h">
+      <Filter>Hammer\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hammer\Events\MouseEvent.h">
+      <Filter>Hammer\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Hammer\Log.h">
       <Filter>Hammer</Filter>
     </ClInclude>
-    <ClInclude Include="src\Hammer\Events\Event.h" />
-    <ClInclude Include="src\Hammer\Events\MouseEvent.h" />
-    <ClInclude Include="src\Hammer\Events\KeyEvent.h" />
+    <ClInclude Include="src\Hammer\Platform\Windows\WindowsWindow.h">
+      <Filter>Hammer\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hammer\Window.h">
+      <Filter>Hammer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\hmpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hammer\Application.cpp">
@@ -30,6 +55,9 @@
     <ClCompile Include="src\Hammer\Log.cpp">
       <Filter>Hammer</Filter>
     </ClCompile>
-    <ClCompile Include="src\Hammer\Events\ApplicationEvent.h" />
+    <ClCompile Include="src\Hammer\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Hammer\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hmpch.cpp" />
   </ItemGroup>
 </Project>

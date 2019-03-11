@@ -7,8 +7,14 @@
     <Filter Include="Hammer\Events">
       <UniqueIdentifier>{6368C4C2-CF28-40F9-9863-897604E384D5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Hammer\Imgui">
+      <UniqueIdentifier>{E9A522E7-D508-B28B-7E8E-EA416AD07D0E}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Hammer\Platform">
       <UniqueIdentifier>{93149EA1-FF9F-0B66-08B1-8E5A74BB6766}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hammer\Platform\OpenGl">
+      <UniqueIdentifier>{877AA994-7374-D2E6-5CE1-68F7487A3853}</UniqueIdentifier>
     </Filter>
     <Filter Include="Hammer\Platform\Windows">
       <UniqueIdentifier>{CDA1F481-39D9-3C19-42E3-A03CAE996312}</UniqueIdentifier>
@@ -37,8 +43,32 @@
     <ClInclude Include="src\Hammer\Events\MouseEvent.h">
       <Filter>Hammer\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hammer\Imgui\ImGuiLayer.h">
+      <Filter>Hammer\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hammer\Input.h">
+      <Filter>Hammer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hammer\KeyCodes.h">
+      <Filter>Hammer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hammer\Layer.h">
+      <Filter>Hammer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hammer\LayerStack.h">
+      <Filter>Hammer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Hammer\Log.h">
       <Filter>Hammer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hammer\MouseButtonCodes.h">
+      <Filter>Hammer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hammer\Platform\OpenGl\ImGuiOpenGlRenderer.h">
+      <Filter>Hammer\Platform\OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hammer\Platform\Windows\WindowsInput.h">
+      <Filter>Hammer\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\Hammer\Platform\Windows\WindowsWindow.h">
       <Filter>Hammer\Platform\Windows</Filter>
@@ -52,8 +82,23 @@
     <ClCompile Include="src\Hammer\Application.cpp">
       <Filter>Hammer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Hammer\Imgui\ImGuiLayer.cpp">
+      <Filter>Hammer\Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hammer\Layer.cpp">
+      <Filter>Hammer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hammer\LayerStack.cpp">
+      <Filter>Hammer</Filter>
+    </ClCompile>
     <ClCompile Include="src\Hammer\Log.cpp">
       <Filter>Hammer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hammer\Platform\OpenGl\ImGuiOpenGlRenderer.cpp">
+      <Filter>Hammer\Platform\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hammer\Platform\Windows\WindowsInput.cpp">
+      <Filter>Hammer\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Hammer\Platform\Windows\WindowsWindow.cpp">
       <Filter>Hammer\Platform\Windows</Filter>

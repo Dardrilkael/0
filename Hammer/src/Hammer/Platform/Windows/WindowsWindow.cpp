@@ -1,3 +1,4 @@
+#include "hmpch.h"
 #include "WindowsWindow.h"
 #include "Hammer/Log.h"
 
@@ -5,27 +6,31 @@
 #include "Hammer/Events/MouseEvent.h"
 #include "Hammer/Events/ApplicationEvent.h"
 #include "glad/glad.h"
-namespace Hammer
-{
+namespace Hammer {
 static bool glfwInitialized = false;
 
 Window*Window::Create(const WindowProps& props)
 {
+	HM_CORE_TRACER
 	return new WindowsWindow(props);
 }
 
 WindowsWindow::WindowsWindow(const WindowProps& props)
 {
+	HM_CORE_TRACER
 	Init(props);
 }
 
 void WindowsWindow::ShutDown()
 {
+	HM_CORE_TRACER
 	glfwDestroyWindow(m_Window);
 }
 
+
 WindowsWindow::~WindowsWindow()
 {
+	HM_CORE_TRACER
 	ShutDown();
 }
 
@@ -33,6 +38,7 @@ WindowsWindow::~WindowsWindow()
 
 void WindowsWindow::Init(const WindowProps& props)
 {
+	HM_CORE_TRACER
 	m_Data.title = props.Title;
 	m_Data.height = props.Height;
 	m_Data.width = props.Width;
@@ -89,7 +95,8 @@ void WindowsWindow::Init(const WindowProps& props)
 	glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int codepoint) 
 	{
 		WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
-
+		KeyTypedEvent e(codepoint);
+		data.EventCallback(e);
 	});
 
 
@@ -185,19 +192,22 @@ void WindowsWindow::Init(const WindowProps& props)
 
 void WindowsWindow::OnUpDate()
 {
+
 	glfwPollEvents();
-	glClear(GL_COLOR_BUFFER_BIT);
+
 	glfwSwapBuffers(m_Window);
 }
 
 bool WindowsWindow::IsVSync() const
 {
+	HM_CORE_TRACER
 	if (m_Data.VSync)return true;
 	return false;
 }
 
 void WindowsWindow::SetVSync(bool enabled)
 {
+	HM_CORE_TRACER
 	if (enabled)
 		glfwSwapInterval(1);
 	else

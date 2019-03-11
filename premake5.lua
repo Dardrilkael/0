@@ -8,13 +8,14 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 include "Hammer/vendor/GLFW"
 include "Hammer/vendor/glad"
+include "Hammer/vendor/imgui"
 
 project "Hammer"
 	location "Hammer"
 	kind "SharedLib"
 	language "C++"
 	staticruntime "off"
-	systemversion "latest"
+	
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -27,7 +28,9 @@ project "Hammer"
 	"%{prj.name}/src",
 	"%{prj.name}/vendor/spdlog/include",
 	"%{prj.name}/vendor/GLFW/include",
-	"%{prj.name}/vendor/glad/include"
+	"%{prj.name}/vendor/glad/include",
+	"%{prj.name}/vendor/imgui",
+	"%{prj.name}/vendor/glm"
 	}
 	
 	files
@@ -45,7 +48,9 @@ project "Hammer"
 	links
 	{
 	"GLFW",
-	"Glad"
+	"Glad",
+	"opengl32.lib",
+	"Imgui"
 	}
 	
 	filter "system:windows"
@@ -61,28 +66,21 @@ project "Hammer"
 	
 	
 	filter "configurations:Dist"
+		defines "HM_DIST"
+		runtime "Release"
 		optimize "On"
-		symbols "Off"
-	
-		defines
-		{
-			"HM_DIST"
-		}
+		
 	
 	filter "configurations:Release"
+		defines "HM_RELEASE"
+		runtime "Release"
 		optimize "On"
-		symbols "On"
-		defines
-	{
-		"HM_RELEASE"
-	}
+	
 	
 	filter "configurations:Debug"
+		runtime "Debug"
+		defines "HM_DEBUG"
 		symbols "On"
-		defines
-		{
-		"HM_DEBUG"
-		}
 
 
 
@@ -90,6 +88,7 @@ project "SandBox"
 	location "SandBox"
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "off"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -104,7 +103,8 @@ project "SandBox"
 	{
 		"%{prj.name}/src",
 		"Hammer/vendor/spdlog/include",
-		"Hammer/src"
+		"Hammer/src",
+		"%Hammer/vendor/glm"
 	}
 	
 	links 
@@ -114,23 +114,23 @@ project "SandBox"
 	
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 		defines
 		{
 			"HM_PLATFORM_WINDOWS"
 		}
 
-	filter "configurations:Dist"
-		optimize "On"
-		defines "HM_DIST"
-		
-	
-	filter "configurations:Release"
-		optimize "On"
-		defines "HM_RELEASE"
-	
-	
 	filter "configurations:Debug"
-		symbols "On"
 		defines "HM_DEBUG"
+		runtime "Debug"
+		symbols "On"
+
+	filter "configurations:Release"
+		defines "HM_RELEASE"
+		runtime "Release"
+		optimize "On"
+
+	filter "configurations:Dist"
+		defines "HM_DIST"
+		runtime "Release"
+		optimize "On"

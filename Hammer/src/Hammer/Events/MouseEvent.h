@@ -1,7 +1,7 @@
 #pragma once
 #include "Event.h"
 
-namespace Hammer{
+namespace Hammer {
 
 class HM_API MouseButtonEvent :public Event
 {

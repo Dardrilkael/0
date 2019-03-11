@@ -4,8 +4,7 @@
 #include "spdlog/fmt/ostr.h"
 
 
-namespace Hammer
-{
+namespace Hammer {
 
 
 class HM_API Log
@@ -30,10 +29,12 @@ private:
 	#define HM_CORE_INFO(...) Hammer::Log::GetCoreLogger()->info(__VA_ARGS__)
 	#define HM_CORE_WARN(...) Hammer::Log::GetCoreLogger()->warn(__VA_ARGS__)
 	#define HM_CORE_CRITICAL(...) Hammer::Log::GetCoreLogger()->critical(__VA_ARGS__)
-	
+	#define HM_CORE_TRACER HM_CORE_INFO("{0} (Line: {1})", __FUNCTION__, __LINE__);
+	//#define HM_CORE_TRACER 
 	#define HM_LOG_TRACE(...) Hammer::Log::GetClientLogger()->trace(__VA_ARGS__)
 	#define HM_LOG_DEBUG(...) Hammer::Log::GetClientLogger()->debug(__VA_ARGS__)
 	#define HM_LOG_INFO(...) Hammer::Log::GetClientLogger()->info(__VA_ARGS__)
 	#define HM_LOG_WARN(...) Hammer::Log::GetClientLogger()->warn(__VA_ARGS__)
 	#define HM_LOG_CRITICAL(...) Hammer::Log::GetClientLogger()->critical(__VA_ARGS__)
+
 #endif
